@@ -1,0 +1,43 @@
+{
+    "compilerOptions": {
+        "target": "ES2024",
+        "module": "NodeNext",
+        "lib": [
+            "ES2024"
+        ],
+        "moduleResolution": "nodenext",
+        "skipLibCheck": true,
+        "useDefineForClassFields": true,
+        "allowSyntheticDefaultImports": true,
+        "forceConsistentCasingInFileNames": true,
+        /* Bundler mode */
+        "sourceMap": true,
+        "declaration": true,
+        "removeComments": true,
+        "incremental": true,
+        /* Paths */
+        "outDir": "./dist",
+        "baseUrl": "./",
+        "paths": {
+            "@/*": [
+                "src/*"
+            ]
+        },
+        /* rules */
+        "strict": true,
+        "noFallthroughCasesInSwitch": true,
+        "exactOptionalPropertyTypes": true,
+        "noImplicitOverride": true,
+        "noImplicitReturns": true,
+        "noPropertyAccessFromIndexSignature": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "noUncheckedSideEffectImports": true
+    },
+    "exclude": [
+        "node_modules",
+        "test",
+        "dist",
+        "**/*spec.ts"
+    ],
+}

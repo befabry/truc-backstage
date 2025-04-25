@@ -6,11 +6,32 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server"
+    "dev": "cross-env NODE_ENV=development node --watch --import tsx src/index.ts",
+    "build": "rimraf dist && tsc",
+    "start": "node dist/index.js",
+    "type-check": "tsc --noEmit",
+    "lint-fix": "eslint --fix \"{src,apps,libs,test}/**/*.ts\""
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "fastify": "^5.2.2"
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.1",
+    "@types/node": "^20.17.30",
+    "@typescript-eslint/parser": "^8.31.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^9.25.1",
+    "eslint-config-prettier": "^10.1.2",
+    "eslint-import-resolver-typescript": "^4.3.4",
+    "eslint-plugin-import-x": "^4.10.6",
+    "eslint-plugin-prettier": "^5.2.6",
+    "eslint-plugin-unused-imports": "^4.1.4",
+    "nodemon": "^3.1.10",
+    "prettier": "^3.5.3",
+    "tsx": "^4.19.3",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.31.0"
   }
 }
