@@ -1,5 +1,4 @@
 import { spawn } from 'child_process';
-import { join } from 'path';
 import { type Request, type Response } from 'express';
 
 const HTTP_OK = 200;
@@ -10,8 +9,17 @@ export function handleScript(_request: Request, response: Response) {
   try {
     console.log('calling script');
 
-    const scriptPath = join(process.cwd(), 'src', 'script.sh');
-    const child = spawn('bash', [scriptPath]);
+    // basic test
+    // const scriptPath = join(process.cwd(), 'src', 'script.sh');
+    // const child = spawn('bash', [scriptPath]);
+
+    const child = spawn('docker', [
+      'exec',
+      '-i', // No -t (no TTY in Node.js)
+      'ai_retrodoc-streamlit-app-1',
+      'python',
+      '/app/src/archimind/main.py',
+    ]);
 
     response.writeHead(HTTP_OK, {
       'Content-Type': 'text/event-stream',
