@@ -28,7 +28,6 @@
     "eslint-plugin-import-x": "^4.10.6",
     "eslint-plugin-prettier": "^5.2.6",
     "eslint-plugin-unused-imports": "^4.1.4",
-    "nodemon": "^3.1.10",
     "prettier": "^3.5.3",
     "tsx": "^4.19.3",
     "typescript": "^5.8.3",
